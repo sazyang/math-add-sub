@@ -11,7 +11,7 @@ function App() {
         <QuestionGenerator/>       
       </header>
     </div>
-  );
+  ); 
 }
 
 export default App;

@@ -6,7 +6,8 @@ const QuestionGenerator = () => {
     const [answer, setAnswer] = useState(0);
     const [sysInfo, setSysInfo] = useState("");
 
-    const handleAnswerSubmit = () =>{
+    const handleAnswerSubmit = (event) =>{
+        event.preventDefault();
         if(firstNum+secondNum==answer){
             setSysInfo("Correct!");
         } else {
@@ -28,11 +29,6 @@ const QuestionGenerator = () => {
     }
 
 
-    // useEffect(()=>{
-    //     setFirstNum(()=>{GenerateNumber(1,10)});
-    //     setSecondNum(()=>{GenerateNumber(1,10)});
-    // },[firstNum,secondNum]);
-
 
     return (
         <div>
@@ -42,7 +38,7 @@ const QuestionGenerator = () => {
             <h1>{sysInfo}</h1>
             </form>
 
-            <button value="Refresh" onClick={handleRefreshOnclick}/>
+            <button onClick={handleRefreshOnclick}>Next Question</button>
 
         </div>
     )
